@@ -6,20 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unpkg.com/open-props"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Notion Project Manager</title>
   </head>
   <body>
-    <main class="card-container">
-      <article class="card">
-        <img src="https://doodleipsum.com/350x197/flat?i=e82d739b495b376d10a433a1f44448bb" alt="flat illustration" class="card__image">
-        <h2 class="card__heading">Heading 1</h2>
-        <div class="card__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, deserunt.</div>
-        <a href="#" class="card__btn">Check it out!</a>
-      </article>
-      
+    <main class="card-container">     
     </main>
+    <script>
+      (
+        function loadSkeletonData() {
+          const skeleton = {
+            html: `<article class="card">
+      <div class="card__image"></div>
+      <h2 class="card__heading"></h2>
+      <div class="card__content">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+      <a class="card__btn"></a>
+    </article>`,
+        css: `<style>
+          .card__image {
+            width: 100%;
+            height: 240px;
+            background-color: var(--teal-2);
+            border-radius: var(--radius-3);
+          }
+          .card__heading {
+            width: 80%;
+            height: 3.5rem;
+            background-color: var(--teal-4);
+            border-radius: var(--radius-3);
+            margin: 1rem 0 .6rem;
+          }
+          .card__content > p {
+            width: 100%;
+            height: 1.5rem;
+            background-color: var(--teal-2);
+            border-radius: var(--radius-3);
+          }
+          .card__content > p:last-child {
+            width: 70%;
+          }
+          .card__btn {
+            background-color: var(--teal-10);
+            width: 130px;
+            height: 2.8rem;
+          }
+          </style>`,
+          }
+
+          const cardContainer = document.querySelector('.card-container')
+          cardContainer.innerHTML = skeleton.html.repeat(6) + skeleton.css
+        }
+      )()
+    </script>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

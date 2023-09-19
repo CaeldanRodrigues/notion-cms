@@ -51,3 +51,22 @@ body {
   box-shadow: none;
   transform: scale(.9);
 }
+
+@media(prefers-color-scheme: dark) {
+  html {
+    --shadow-strength: 5%;
+  }
+
+  body {
+    background-image: var(--gradient-23);
+    color: #ccc;
+  }
+
+  .card__heading {
+    color: var(--teal-5);
+  }
+  
+  .card {
+    background-color: var(--gray-8);
+  }
+}
